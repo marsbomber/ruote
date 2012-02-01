@@ -48,6 +48,11 @@ module Ruote::Exp
     #
     def merge_workitems(index, target, source, merge_type)
 
+      puts index.inspect
+      puts target.inspect
+      puts source.inspect
+      puts merge_type.inspect
+      
       return source if merge_type == 'override'
 
       if target == nil
