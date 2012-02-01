@@ -30,20 +30,6 @@ module Ruote::Exp
   #
   module MergeMixin
 
-    # Given a list of workitems and a merge_type, will merge according to
-    # the merge type.
-    #
-    # The return value is the merged workitem.
-    #
-    def merge_workitems(workitems, merge_type)
-
-      rworkitems = workitems.reverse
-
-      workitems.inject(nil) do |t, wi|
-        merge_workitem(workitems.index(wi), t, wi, merge_type)
-      end
-    end
-
     # Merge workitem 'source' into workitem 'target'.
     #
     # If type is 'override', the source will prevail and be returned.
@@ -60,7 +46,7 @@ module Ruote::Exp
     # Warning: 'union' will remove duplicates that were present _before_ the
     # merge.
     #
-    def merge_workitem(index, target, source, merge_type)
+    def merge_workitems(index, target, source, merge_type)
 
       return source if merge_type == 'override'
 
