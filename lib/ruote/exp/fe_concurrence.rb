@@ -172,7 +172,7 @@ module Ruote::Exp
       h.ccount = nil if h.ccount < 1
 
       h.cmerge = att(:merge, %w[ first last highest lowest ])
-      h.cmerge_type = att(:merge_type, %w[ override mix isolate stack ])
+      h.cmerge_type = att(:merge_type, %w[ override mix isolate stack union ignore concat ])
       h.remaining = att(:remaining, %w[ cancel forget ])
 
       h.workitems = (h.cmerge == 'first' || h.cmerge == 'last') ? [] : {}
