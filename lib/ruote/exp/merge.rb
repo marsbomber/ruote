@@ -48,6 +48,7 @@ module Ruote::Exp
     #
     def merge_workitems(index, target, source, merge_type)
 
+      puts "---" * 20
       puts index.inspect
       puts target.inspect
       puts source.inspect
@@ -107,6 +108,10 @@ module Ruote::Exp
               end
             end
         end
+        
+        puts "===" * 20
+        puts target.inspect
+        puts "---" * 20
 
         target
       end
